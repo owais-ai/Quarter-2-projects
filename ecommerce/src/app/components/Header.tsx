@@ -4,81 +4,85 @@ import Link from "next/link";
 export default function Header() {
   return (
     <div>
-
-      <div className="flex justify-end pr-20 text-white items-center bg-black py-4">
-        <div className="w-[859px] h-[24px] flex gap-6">
-          <p>
+      {/* Top Bar */}
+      <div className="relative flex flex-col md:flex-row justify-center px-4 text-white items-center bg-black py-2 md:py-4 md:pr-28">
+        <div className="flex flex-col md:flex-row gap-2 md:gap-6 text-center">
+          <p className="text-sm md:text-base">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           </p>
-          <span className="font-semibold">
-            <u>ShopNow</u>
-          </span>
+          <span className="font-semibold cursor-pointer underline hidden md:flex">ShopNow</span>
         </div>
-        <div className="flex gap-2">
-          <span>English</span>
+        <div className="absolute md:flex items-center gap-2 mt-2 md:mt-0 hidden md:right-28">
+          <span className="text-sm">English</span>
           <Image
             src={"/dropdown.png"}
-            alt={"dopedown"}
-            width={24}
-            height={24}
+            alt={"dropdown"}
+            width={16}
+            height={16}
           />
         </div>
       </div>
-      <div className="flex justify-around mt-12 items-center">
-        <div>
-          <div className="-mt-8"><Link href={"/"}><Image src={"/logo.png"} alt="logo" width={68} height={48} /></Link></div>
+
+      {/* Main Navigation */}
+      <div className="flex flex-col md:flex-row justify-between px-4 md:px-28 mt-4 md:my-6 items-center">
+        {/* Logo */}
+        <div className="mb-4 md:mb-0">
+          <Link href="/">
+            <Image src="/logo.png" alt="logo" width={68} height={48} />
+          </Link>
         </div>
-        <div>
-          <ul className="flex gap-10">
-            <li className="border-b-2 hover:border-b-2 hover:border-slate-300">
-              <Link href={"/"}>Home</Link>
-            </li>
-            <li className="hover:border-b-2 hover:border-slate-300">
-              <Link href={"/contact"}>Contact</Link>
-            </li>
-            <li className="hover:border-b-2 hover:border-slate-300">
-              <Link href={"/about"}>About</Link>
-            </li>
-            <li className="hover:border-b-2 hover:border-slate-300">
-              <Link href={"/signup"}>Signup</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="flex gap-8 items-center">
-          <div className="bg-slate-100 rounded flex justify-around gap items-center w-[243px] h-[38px]">
-            <div className="">
-              <input
-                type="text"
-                placeholder="What are you looking for?"
-                className="bg-slate-100 font-thin text-[12px] p-1 w-[180px] outline-none"
-              />
-            </div>
-            <div className="w-4 h-4">
-              <button><Image
-                className="bg-slate-100"
-                src={"/search.svg"}
+
+        {/* Navigation Links */}
+        <ul className="flex flex-col md:flex-row gap-4 md:gap-10 text-center">
+          <li className="border-b-2 hover:border-slate-300">
+            <Link href="/">Home</Link>
+          </li>
+          <li className="hover:border-b-2 hover:border-slate-300">
+            <Link href="/contact">Contact</Link>
+          </li>
+          <li className="hover:border-b-2 hover:border-slate-300">
+            <Link href="/about">About</Link>
+          </li>
+          <li className="hover:border-b-2 hover:border-slate-300">
+            <Link href="/signup">Signup</Link>
+          </li>
+        </ul>
+
+        {/* Search and Icons */}
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center mt-4 md:mt-0">
+          <div className="flex items-center bg-slate-100 rounded w-full md:w-[243px] h-10">
+            <input
+              type="text"
+              placeholder="What are you looking for?"
+              className="bg-slate-100 text-sm p-2 w-full outline-none"
+            />
+            <button className="px-2">
+              <Image
+                src="/search.svg"
                 alt="search icon"
                 width={16}
                 height={16}
-              /></button>
-            </div>
+              />
+            </button>
           </div>
           <div className="flex gap-5">
-            <button><Image
-              src={"/wishlist.svg"}
-              alt="wishlist"
-              width={16}
-              height={16}
-            /></button> <button><Image
-              src={"/cart.svg"}
-              alt="cart"
-              width={20}
-              height={16}
-            /></button>
+            <button>
+              <Image
+                src="/wishlist.svg"
+                alt="wishlist"
+                width={16}
+                height={16}
+              />
+            </button>
+            <button>
+              <Image src="/cart.svg" alt="cart" width={20} height={16} />
+            </button>
           </div>
         </div>
       </div>
-      <div className="border-t-[1px] border-t-slate-200 my-4 mx-28" />
+
+      {/* Divider */}
+      <div className="border-t border-slate-200 my-4 mx-4 md:mx-28" />
     </div>
   );
 }
