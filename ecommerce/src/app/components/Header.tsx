@@ -1,5 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function Header() {
   return (
@@ -10,7 +19,9 @@ export default function Header() {
           <p className="text-sm md:text-base">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           </p>
-          <span className="font-semibold cursor-pointer underline hidden md:flex">ShopNow</span>
+          <span className="font-semibold cursor-pointer underline hidden md:flex">
+            ShopNow
+          </span>
         </div>
         <div className="absolute md:flex items-center gap-2 mt-2 md:mt-0 hidden md:right-28">
           <span className="text-sm">English</span>
@@ -32,21 +43,70 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Navigation Links */}
-        <ul className="flex flex-col md:flex-row gap-4 md:gap-10 text-center">
-          <li className="border-b-2 hover:border-slate-300">
-            <Link href="/">Home</Link>
-          </li>
-          <li className="hover:border-b-2 hover:border-slate-300">
-            <Link href="/contact">Contact</Link>
-          </li>
-          <li className="hover:border-b-2 hover:border-slate-300">
-            <Link href="/about">About</Link>
-          </li>
-          <li className="hover:border-b-2 hover:border-slate-300">
-            <Link href="/signup">Signup</Link>
-          </li>
-        </ul>
+        <div>
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger>
+                <Menu />
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>Navigate to?</SheetTitle>
+                  <SheetDescription>
+                    <ul className="flex flex-col gap-4 ">
+                      <li className="border-b-2 hover:border-slate-300">
+                        <Link href="/">Home</Link>
+                      </li>
+                      <li className="hover:border-b-2 hover:border-slate-300">
+                        <Link href="/contact">Contact</Link>
+                      </li>
+                      <li className="hover:border-b-2 hover:border-slate-300">
+                        <Link href="/about">About</Link>
+                      </li>
+                      <li className="hover:border-b-2 hover:border-slate-300">
+                        <Link href="/signup">Signup</Link>
+                      </li>
+                    </ul>
+                    <div className="flex gap-3 justify-center mt-6">
+                      <button>
+                        <Image
+                          src="/wishlist.svg"
+                          alt="wishlist"
+                          width={16}
+                          height={16}
+                        />
+                      </button>
+                      <button>
+                        <Image
+                          src="/cart.svg"
+                          alt="cart"
+                          width={20}
+                          height={16}
+                        />
+                      </button>
+                    </div>
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
+          </div>
+
+          {/* Navigation Links */}
+          <ul className="md:flex flex-col md:flex-row gap-4 md:gap-10 text-center hidden">
+            <li className="border-b-2 hover:border-slate-300">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="hover:border-b-2 hover:border-slate-300">
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li className="hover:border-b-2 hover:border-slate-300">
+              <Link href="/about">About</Link>
+            </li>
+            <li className="hover:border-b-2 hover:border-slate-300">
+              <Link href="/signup">Signup</Link>
+            </li>
+          </ul>
+        </div>
 
         {/* Search and Icons */}
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center mt-4 md:mt-0">
@@ -65,7 +125,7 @@ export default function Header() {
               />
             </button>
           </div>
-          <div className="flex gap-5">
+          <div className="md:flex gap-5 hidden">
             <button>
               <Image
                 src="/wishlist.svg"

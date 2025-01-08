@@ -61,7 +61,7 @@ const ProductCategories = () => {
       {categories.map((category) => (
         <div
           key={category.id}
-          className="group w-[170px] h-[145px] border-2 border-slate-300 flex flex-col justify-center items-center gap-3 hover:bg-[#DB4444] hover:text-white transition-colors duration-300"
+          className="group w-[170px] h-[145px] border-2 border-slate-300 flex flex-col justify-center items-center gap-3 hover:bg-[#DB4444]  hover:text-white transition-colors duration-300"
         >
           <Image
             src={category.image}
