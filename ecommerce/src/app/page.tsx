@@ -8,9 +8,10 @@ export default function Home() {
   // components/FlashProducts.js
 
   return (
-    <div className="Main mx-28">
-      <div className="Hero mt-10 flex justify-between">
-        <div className="Hero1">
+    <div className="Main">
+      <div className="Hero mt-10 flex justify-between mx-28">
+        {/* Category Section */}
+        <div className="Hero1 hidden md:block">
           <ul className="flex flex-col justify-between h-[344px]">
             <Link href="#">
               <li className="hover:underline">Woman's Fashion</li>
@@ -42,7 +43,8 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className="Hero2 w-[894px] h-[344px] flex flex-col items-center justify-center gap-10 bg-black overflow-hidden">
+        {/* Hero section */}
+        <div className="Hero2 w-[894px] h-[344px] hidden md:flex md:flex-col items-center justify-center gap-10 bg-black overflow-hidden">
           <div className="hero1 flex gap-44">
             <div className="flex flex-col gap-8 pt-10">
               <div>
@@ -94,13 +96,16 @@ export default function Home() {
       </div>
 
       {/* Flash Products */}
-      <FlashProducts />
+      <div className="md:mx-20">
+        <FlashProducts />
+      </div>
 
       {/* Product Categories */}
-      <ProductCategories />
+      <div className="md:mx-20">
+      <ProductCategories /></div>
 
       {/* Best Selling products of Month */}
-          <BestSellingProducts />
+      <div className="md:mx-20"><BestSellingProducts /></div>
     </div>
   );
 }

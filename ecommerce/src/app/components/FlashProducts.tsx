@@ -47,16 +47,17 @@ const products = [
 const FlashProducts = () => {
   return (
     <div>
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 md:py-20">
         {/* Header Section */}
-        <div className="w-5 h-10 rounded-md bg-[#DB4444] font-semibold flex items-center">
-          <span className="ml-8 text-[#DB4444]">Today's</span>
+        <div className="flex items-center mb-10">
+          <div className="w-5 h-10 rounded-md bg-[#DB4444] font-semibold flex items-center">
+          </div><span className="ml-3 text-[#DB4444] font-semibold">Today's</span>
         </div>
 
         {/* Main Section */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Flash Sales Heading */}
-          <div className="md:w-1/3 text-center md:text-left">
+          <div className="md:w-1/3 text-center md:text-left my-6">
             <h2 className="text-3xl font-semibold">Flash Sales</h2>
           </div>
 

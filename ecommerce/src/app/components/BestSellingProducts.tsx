@@ -50,12 +50,11 @@ const bestSellingProducts = [
 const BestSellingProducts = () => {
   return (
     <div>
-      <div className="container mx-auto px-4 py-20">
+      <div className="container mx-auto px-4 py-6 md:py-20">
         {/* Header Section */}
         <div className="flex items-center mb-10">
           <div className="w-5 h-10 rounded-md bg-[#DB4444] font-semibold flex items-center">
-            
-          </div><span className="ml-4 text-[#DB4444] font-semibold">This Month</span>
+          </div><span className="ml-3 text-[#DB4444] font-semibold">This Month</span>
         </div>
 
         {/* Main Section */}
