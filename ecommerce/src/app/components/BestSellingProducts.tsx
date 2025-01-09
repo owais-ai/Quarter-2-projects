@@ -50,21 +50,32 @@ const bestSellingProducts = [
 const BestSellingProducts = () => {
   return (
     <div>
-      <div className="Month">
-        <div className="flex mt-20 items-center">
-          <div className=" w-5 h-10 rounded-md bg-[#DB4444] flex items-center"></div>
-          <p className="ml-3 text-[#DB4444] font-semibold ">This Month</p>
+      <div className="container mx-auto px-4 py-20">
+        {/* Header Section */}
+        <div className="flex items-center mb-10">
+          <div className="w-5 h-10 rounded-md bg-[#DB4444] font-semibold flex items-center">
+            
+          </div><span className="ml-4 text-[#DB4444] font-semibold">This Month</span>
         </div>
 
-        <div className="Today's mb-14 mt-6 flex justify-between gap-20 items-baseline">
-          <div className="text-3xl font-semibold">Best Selling Products</div>
-          <div className="">
-            <button className="border-[1px] py-4 px-12 rounded text-white bg-[#DB4444]">
+        {/* Main Section */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Heading */}
+          <div className="md:w-1/2">
+            <h2 className="text-3xl font-semibold">Best Selling Products</h2>
+          </div>
+
+          {/* View All Button */}
+          <div className="md:w-1/2 flex justify-center md:justify-end">
+            <button className="bg-[#DB4444] hover:bg-[#c43333] text-white py-3 px-6 rounded-md transition duration-300">
               View All
             </button>
           </div>
         </div>
+
+        {/* Optional: Add Best Selling Products Grid or Carousel Here */}
       </div>
+
       <div className="BestSellingProducts flex justify-around flex-wrap">
         {bestSellingProducts.map((product) => (
           <div
