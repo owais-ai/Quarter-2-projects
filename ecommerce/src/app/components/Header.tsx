@@ -44,10 +44,60 @@ export default function Header() {
         </div>
 
         <div>
+          {/* Navigation Links */}
+          <ul className="md:flex flex-col md:flex-row gap-4 md:gap-10 text-center hidden">
+            <li className="border-b-2 hover:border-slate-300">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="hover:border-b-2 hover:border-slate-300">
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li className="hover:border-b-2 hover:border-slate-300">
+              <Link href="/about">About</Link>
+            </li>
+            <li className="hover:border-b-2 hover:border-slate-300">
+              <Link href="/signup">Signup</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="flex items-center gap-x-16">
+          {/* Search and Icons */}
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+            <div className="flex items-center bg-slate-100 rounded w-full md:w-[243px] h-10">
+              <input
+                type="text"
+                placeholder="What are you looking for?"
+                className="bg-slate-100 text-sm p-2 w-full outline-none"
+              />
+              <button className="px-2">
+                <Image
+                  src="/search.svg"
+                  alt="search icon"
+                  width={16}
+                  height={16}
+                />
+              </button>
+            </div>
+            <div className="md:flex gap-5 hidden">
+              <button>
+                <Image
+                  src="/wishlist.svg"
+                  alt="wishlist"
+                  width={16}
+                  height={16}
+                />
+              </button>
+              <button>
+                <Image src="/cart.svg" alt="cart" width={20} height={16} />
+              </button>
+            </div>
+          </div>
+
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger>
-                <Menu />
+                <Menu height={35} width={35} />
               </SheetTrigger>
               <SheetContent>
                 <SheetHeader>
@@ -89,54 +139,6 @@ export default function Header() {
                 </SheetHeader>
               </SheetContent>
             </Sheet>
-          </div>
-
-          {/* Navigation Links */}
-          <ul className="md:flex flex-col md:flex-row gap-4 md:gap-10 text-center hidden">
-            <li className="border-b-2 hover:border-slate-300">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="hover:border-b-2 hover:border-slate-300">
-              <Link href="/contact">Contact</Link>
-            </li>
-            <li className="hover:border-b-2 hover:border-slate-300">
-              <Link href="/about">About</Link>
-            </li>
-            <li className="hover:border-b-2 hover:border-slate-300">
-              <Link href="/signup">Signup</Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Search and Icons */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center mt-4 md:mt-0">
-          <div className="flex items-center bg-slate-100 rounded w-full md:w-[243px] h-10">
-            <input
-              type="text"
-              placeholder="What are you looking for?"
-              className="bg-slate-100 text-sm p-2 w-full outline-none"
-            />
-            <button className="px-2">
-              <Image
-                src="/search.svg"
-                alt="search icon"
-                width={16}
-                height={16}
-              />
-            </button>
-          </div>
-          <div className="md:flex gap-5 hidden">
-            <button>
-              <Image
-                src="/wishlist.svg"
-                alt="wishlist"
-                width={16}
-                height={16}
-              />
-            </button>
-            <button>
-              <Image src="/cart.svg" alt="cart" width={20} height={16} />
-            </button>
           </div>
         </div>
       </div>
