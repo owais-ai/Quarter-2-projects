@@ -64,7 +64,7 @@ export default function Header() {
         <div className="flex items-center gap-x-16">
           {/* Search and Icons */}
           <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
-            <div className="flex items-center bg-slate-100 rounded w-full md:w-[243px] h-10">
+            <div className="flex items-center border border-gray-300 bg-slate-100 rounded w-full md:w-[243px] h-10">
               <input
                 type="text"
                 placeholder="What are you looking for?"
